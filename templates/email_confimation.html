@@ -1,0 +1,15 @@
+{% autoescape off %}
+
+Welcome to Test Project!! 
+
+Hello {{ name }}
+
+Thankyou for visiting my project.
+We have also send you a confirmation email, 
+Please confirm your email address by clicking on the following link in order to activate your account.
+
+confirmation Link: http://{{ domain }}{% url 'activate' uidb64=uid token=token %}
+ 
+Thanking You!  Rashi Jain
+
+{% endautoescape %} 

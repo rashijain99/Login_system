@@ -1,0 +1,60 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>login</title>  
+    {% load static %}  
+    <link href="{% static 'css/bootstrap.rtl.css' %}" rel="stylesheet">   
+    
+</head>  
+<body>  
+
+    {% for message in messages %}
+    <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+        <strong>Message: </strong> {{message}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div> 
+    {% endfor %} 
+     
+
+    <div class="container mt-5">
+        <h1 class="text-danger"> Sign-Up </h1>
+                <form action="/signup/" method="post">  
+                    {% csrf_token %}
+                        <div class="form-group mt-4">  
+                            <label for="">Username:</label>  
+                            <input type="text" id="username" name="username" class="form-control"  placeholder="Create a Username (only letters and numbers)" Required>  
+                        </div> 
+
+                        <div class="form-group mt-4">  
+                            <label for="">Firstname:</label>  
+                            <input type="ftext" id="firstname" name="firstname" class="form-control"  placeholder="Enter your First Name" Required>  
+                        </div> 
+                        
+                        <div class="form-group mt-4">  
+                            <label for="">Lastname:</label>  
+                            <input type="text" id="lastname" name="lastname" class="form-control"  placeholder="Enter your Last Name" Required>  
+                        </div> 
+
+                        <div class="form-group mt-4">  
+                            <label for="">Email:</label>  
+                            <input type="email" id="email" name="email" class="form-control"  placeholder="Enter your EMAIL Address" Required>  
+                        </div> 
+
+                        <div class="form-group mt-4">  
+                            <label for="">Password:</label>  
+                            <input type="password" id="pass1" name="pass1" class="form-control"  placeholder="Create a Password" Required>  
+                        </div> 
+
+                        <div class="form-group mt-4">  
+                            <label for="">Confirm your Password:</label>  
+                            <input type="password" id="pass2" name="pass2" class="form-control"  placeholder="Confirm your Password" Required>  
+                        </div> 
+                         
+                        <button type="submit" class="btn btn-primary mt-4">Sign Up</button>  
+                </form>  
+    </div>
+</body>  
+</html> 
+
+
